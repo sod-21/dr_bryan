@@ -1,0 +1,137 @@
+.main-content {
+    
+    h2 {
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .columns {
+        border-bottom: 5px solid #dddee0;
+        padding-bottom: 50px;
+    }
+
+    & + .vertical-section {
+        .columns:first-child{
+            border-top: 0!important;
+        }
+    }
+}
+
+.horizontal-section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    .columns {
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
+
+        .column {
+            padding: 1.5rem;
+        }
+    }
+
+    .h-content {
+        h2 {
+            text-transform: uppercase;
+            font-size: 30px;
+            line-height: 1.2;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 22px;
+        }
+    }
+
+    .thumbnail {
+        img {
+            width: 100%;
+        }
+    }
+
+
+}
+
+.vertical-section {
+    .columns {
+        border-top: 5px solid #dddee0;
+
+        .column {
+            padding-top: 50px;
+            padding-bottom: 50px;
+
+            .thumbnail {
+                max-width: 250px;
+                margin: 0 auto;
+                width: 100%;
+                text-align: center;
+
+                img {
+                    width: 100%;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+
+    .h-content {
+        h2 {            
+            font-size: 30px;
+            line-height: 1.2;
+        }
+
+        p {
+            font-size: 22px;
+        }
+    }
+
+}
+
+.news-section {
+
+    .column {       
+        margin-bottom: 50px;
+    }
+
+    .h-content {
+        padding-left: 50px;
+        padding-right: 50px;
+        text-align: center;
+
+
+        p {
+            text-align: center;
+            font-size: 22px;
+        }
+
+        h2 {            
+            font-size: 30px;
+            line-height: 1.2;
+
+            a {
+                color: inherit;
+            }
+        }
+
+
+        .thumbnail {
+            max-width: 250px;
+            width: 100%;
+            margin: 0 auto;
+
+            img {
+                width: 100%;
+                border-radius: 50%;
+                margin-bottom: 50px;
+                overflow: hidden;
+            }
+        }
+    }
+
+    &.pages_2 {
+        padding-top: 50px;
+    }
+}
+
+
