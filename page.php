@@ -96,7 +96,7 @@ get_header();
                                     <div class="h-content">
                                         <?php if ($url): ?>
                                         <div class="image is-16by9 video-btn">
-											<iframe class="has-ratio" width="1000" height="562" src="<?php echo sod_change_video_url($url); ?>?rel=0&controls=0" frameborder="0" allowfullscreen></iframe>
+											<iframe class="has-ratio" width="1000" height="562" src="<?php echo sod_change_video_url($url); ?>?rel=0" frameborder="0" allowfullscreen></iframe>
 										</div>
                                         <?php endif; ?>
                                         <h2><?php echo $title; ?></h2>                                                                                

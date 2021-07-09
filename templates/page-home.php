@@ -90,29 +90,8 @@ get_header();
                     <?php
                 endif;
 
-                $tids = $block2["testimonials"] ? $block2["testimonials"] : false;
-                $args = [];
-                if (!empty($tids)) {
-              
-                    $args =  array(
-                        "post_type" => "testimonial",
-                        "post__in" => $tids,
-                        'order'       => 'ASC',
-                        'orderby'     => 'title',
-                        'post_status' => "publish"
-                    );
-                } else {
-                    $args =  array(
-                        "post_type" => "testimonial",
-                        'numberposts' => 9,
-                        'order'       => 'ASC',
-                        'orderby'     => 'title',
-                        'post_status' => "publish"
-                    );
-                }
+                $testimonials = $block2["testimonials"] ? $block2["testimonials"] : false;
                 
-                $testimonials =  get_posts($args);
-
                 if (!empty($testimonials)):
                     ?>
                     <section class="container testimonial-section">
@@ -124,20 +103,26 @@ get_header();
                     <?php
                 foreach ( $testimonials as $testimonial ) {
                     // setup_postdata($testimonial);
-                    $p_id = $testimonial->ID;
+                    $image = $testimonial["image"];
+                    $text = $testimonial["text"];
+                    $url = $testimonial["url"];
+                    $button = $testimonial["button"] ? $testimonial["button"] : "Learn More";
                 ?>
                     <div class="testimonial-item">
+                        <?php if ($image): ?>
                         <div class="thumbnail">
-                            <?php echo get_the_post_thumbnail($p_id, 'full'); ?>
+                            <?php echo sod_generate_image_tag($image); ?>
                         </div>
-                        <h3><?php echo get_the_title($p_id); ?></h3>
+                        <?php endif; ?>
+                        
                         <div class="content">
-                            <?php echo do_shortcode(get_the_content(null, false, $p_id)); ?>
+                            <?php echo $text; ?>
                         </div>
-
+                        <?php if ($url): ?>
                         <div class="button-wrapper">
-                            <a class="s-btn s-normal" href="<?php the_permalink($p_id); ?>">Learn more</a>                            
+                            <a class="s-btn s-normal" href="<?php echo $url; ?>"><?php echo $button; ?></a>
                         </div>
+                        <?php endif; ?>
                     </div>
                 <?php
                     // wp_reset_postdata();

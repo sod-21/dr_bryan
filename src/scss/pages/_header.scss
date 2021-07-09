@@ -62,16 +62,19 @@ header {
                 display: none;
             }
 
-            li.menu-item {
-                a {
-                    color: #000!important;
-
-                    &:before {
-                        background: #000!important;
+            .main-navigation:not(.toggled) {
+                li.menu-item {
+                    a {
+                        color: #000!important;
+    
+                        &:before {
+                            background: #000!important;
+                        }
                     }
                 }
+    
             }
-
+           
             .logo {
                 img {
                     display: none;
@@ -151,9 +154,10 @@ ul.menu {
         align-items: center;
         
         @media only screen and (max-width: 1020px) {
-            text-align: right;
+            text-align: left;
             padding-top: 15px;
             padding-bottom: 15px;
+            display: block;
         }
 
         ul.sub-menu {
@@ -164,13 +168,27 @@ ul.menu {
             padding-right: 3px;
             min-width: 260px;
 
+            @media only screen and (max-width: 1020px) {
+                position: static;
+                float: none;
+                background: transparent;
+            }
+
            & > li {
             padding: 10px 15px;
             border-bottom: 1px solid #f1f1f1;
 
+            @media only screen and (max-width: 1020px) {
+                border-bottom: 0;
+            }
+
             a {
                 color: #000;
                 text-align: left;
+
+                @media only screen and (max-width: 1020px) {
+                    color: #fff;
+                }
 
                 &:before {
                     display: none;

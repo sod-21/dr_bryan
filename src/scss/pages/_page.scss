@@ -65,6 +65,7 @@
                 font-size: 26px;
                 font-weight: 700;
                 color: #125A7B;
+                margin-bottom: 20px;
             }
 
             ul {
@@ -190,23 +191,20 @@ a {
         display: block;
     }
 
-    form {
-        display: flex;
-        align-items: center;        
-    }
-
     input[type="text"] {
         border-radius: 0;
         border: 1px solid #115a7b;
         padding: 0 10px;
-        color: #000!important;
+        color: #000 !important;
         line-height: 30px;
+        visibility: hidden;
+        transition: all 0.3s;
     }
 
     .search_icon {
         background: transparent;
         border: 0;
-        border-radius: 0;        
+        border-radius: 0;
         display: inline-block;
         margin-left: 10px;
         padding: 0;
@@ -214,6 +212,17 @@ a {
 
         svg {
             width: 20px;
+        }
+    }
+
+    form {
+        display: flex;
+        align-items: center;
+        
+        &:hover {
+            input[type="text"] {
+                visibility: visible;
+            }
         }
     }
 }

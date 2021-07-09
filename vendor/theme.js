@@ -13,6 +13,15 @@ jQuery(function($) {
     jQuery(window).on('scroll', function() {
       sticky();
     });
+
+    jQuery(window).on('resize', function() {
+      if (jQuery(window).width() > 1020) {
+        if (jQuery(".main-navigation.toggled").length) {
+          jQuery(".menu-toggle").trigger("click");
+        }
+      }
+    });
+
     sticky();
 
     if (jQuery('.banner-slider').length) {

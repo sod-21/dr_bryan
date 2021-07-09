@@ -235,9 +235,16 @@ textarea {
 	
 }
 
+h3 {
+	margin-bottom: 20px;
+}
+
 @import "pages/header";
 
 @import "pages/footer";
 
 @import "pages/home";
-@import "pages/comercial";
+
+@import "pages/overview";
+
+@import "pages/page";
