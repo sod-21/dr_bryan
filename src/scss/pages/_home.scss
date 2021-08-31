@@ -602,5 +602,14 @@ body.home .news-section .news-item .content h2 {
   a:hover, a:focus, a:active {
     color: #4169e1;
   }
-  
+ 
+  header.site-header .site-branding {
+    flex: 1 0 290px;
+    max-width: 290px;
+
+    @media only screen and (max-width: 768px) {
+      margin-top: 10px;
+    }
+  }
+
   

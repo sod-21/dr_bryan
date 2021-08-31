@@ -122,9 +122,18 @@ $top_header = get_field("top_header", "options");
 		$gradient_class = "gradient_bg";
 	}
 	
-	if (is_search() || is_category()):
-		$url =  get_field("banner_image", "option");
+	if (is_search() || is_category()):		
+		if (function_exists('z_taxonomy_image_url') && is_category()) {
+			$url = z_taxonomy_image_url();
+			$url = $url ? $url : get_field("banner_image", "option");
+
+		} else {
+			$url = get_field("banner_image", "option");
+		}
+
 		$title_text = is_category() ? single_cat_title("", false) : "Search";
+
+		
 	?>
 		<div class="static-banner gradient_bg">		
 		<div class="slide-item">

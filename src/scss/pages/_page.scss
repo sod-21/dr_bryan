@@ -302,3 +302,13 @@ a {
         }        
     }
 }
+
+body.single {
+    &.single-post {
+        article.post {
+            header.entry-header {
+                display: none;
+            }
+        }
+    }
+}

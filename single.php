@@ -35,9 +35,17 @@ get_header();
 			);
 
 			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+			// if ( comments_open() || get_comments_number() ) :
+			// 	comments_template();
+			// endif;
+
+			if (get_post_type() == "post") {
+				?>
+				<div class="contact-us-from-page">
+				<?php echo do_shortcode('[contact-form-7 id="228" title="contactus"]'); ?>
+				</div>
+				<?php
+			}
 		?>
 		<?php if (get_post_type() == "testimonial") : ?>
 		</div>

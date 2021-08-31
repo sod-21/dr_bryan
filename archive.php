@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The main template file
  *
@@ -16,29 +17,49 @@ get_header();
 
 ?>
 
-	<main id="primary" class="site-main">
-    
-                <div class="container">
-                    <div class="columns is-multiline">
-        <?php
-        while ( have_posts() ) :
-            the_post();
-            get_template_part( 'template-parts/content', "list");
+<main id="primary" class="site-main">
+    <?php
+    $description = "";
+    $cat_id = get_query_var('cat');
 
-        endwhile; // End of the loop.
+    if ($cat_id) {
+        $description = category_description($cat_id);
+    }
 
-        
+    if ($description) :
+    ?>
+        <div class="container">
+            <div class="cat_description h-content">
+                <?php echo $description; ?>
+            </div>
+        </div>
+    <?php endif; ?>
 
-        ?>
-         <div class="column">
-             <?php the_posts_navigation(); ?>
-    </div>
+    <div class="container">
+        <div class="columns is-multiline">
+            <?php
+            while (have_posts()) :
+                the_post();
+                get_template_part('template-parts/content', "list");
+
+            endwhile; // End of the loop.
+
+
+
+            ?>
+            <div class="column">
+                <?php the_posts_navigation(); ?>
+            </div>
 
         </div>
-                </div>
-       
-    
-    </main><!-- #main -->
+
+        <div class="contact-us-from-page">
+            <?php echo do_shortcode('[contact-form-7 id="228" title="contactus"]'); ?>
+        </div>
+    </div>
+
+
+</main><!-- #main -->
 
 <?php
 get_footer();
