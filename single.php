@@ -41,8 +41,11 @@ get_header();
 
 			if (get_post_type() == "post") {
 				?>
-				<div class="contact-us-from-page">
+				<div class=" contact-section">
+				<div class="contact-section-content">
+				<h2 style="text-align: center;">Contact US</h2>
 				<?php echo do_shortcode('[contact-form-7 id="228" title="contactus"]'); ?>
+				</div>
 				</div>
 				<?php
 			}
